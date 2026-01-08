@@ -10,7 +10,9 @@ import {
   Users, 
   Coins,
   ChevronDown,
-  User
+  User,
+  LayoutDashboard,
+  Headphones
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -29,6 +31,7 @@ const Header = () => {
     { label: "Expert Talks", href: "/expert-talks", icon: Video },
     { label: "Courses", href: "/courses", icon: GraduationCap },
     { label: "Supplier Connect", href: "/suppliers", icon: Users },
+    { label: "Training", href: "/training", icon: Headphones },
     { label: "Pricing", href: "/pricing", icon: Coins },
   ];
 
@@ -40,22 +43,22 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <FileText className="h-5 w-5 text-primary-foreground" />
+            <div className="flex items-center justify-center font-heading">
+              <span className="text-2xl font-bold text-primary">iid</span>
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground">ProjectHub</span>
-              <span className="text-xs text-muted-foreground">Business Reports</span>
+            <div className="hidden sm:flex flex-col">
+              <span className="text-sm font-heading font-bold text-foreground leading-tight">Institute for Industrial</span>
+              <span className="text-sm font-heading font-bold text-foreground leading-tight">Development</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive(item.href)
                     ? "bg-accent text-accent-foreground"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -70,7 +73,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-3">
             {/* Credit Balance */}
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent">
-              <Coins className="h-4 w-4 text-secondary" />
+              <Coins className="h-4 w-4 text-primary" />
               <span className="text-sm font-semibold text-foreground">5 Credits</span>
             </div>
 
@@ -86,10 +89,16 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem asChild>
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/dashboard" className="flex items-center gap-2">
+                    <LayoutDashboard className="h-4 w-4" />
+                    Dashboard
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/pricing">Buy Credits</Link>
+                  <Link to="/pricing" className="flex items-center gap-2">
+                    <Coins className="h-4 w-4" />
+                    Buy Credits
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>Sign Out</DropdownMenuItem>
               </DropdownMenuContent>
@@ -98,7 +107,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-muted"
+            className="xl:hidden p-2 rounded-lg hover:bg-muted"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -107,7 +116,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="xl:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
@@ -126,11 +135,11 @@ const Header = () => {
               ))}
               <div className="pt-4 mt-4 border-t border-border flex flex-col gap-2">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent">
-                  <Coins className="h-4 w-4 text-secondary" />
+                  <Coins className="h-4 w-4 text-primary" />
                   <span className="text-sm font-semibold text-foreground">5 Credits Available</span>
                 </div>
-                <Button variant="default" className="w-full">
-                  Dashboard
+                <Button asChild variant="default" className="w-full">
+                  <Link to="/dashboard">Dashboard</Link>
                 </Button>
               </div>
             </nav>

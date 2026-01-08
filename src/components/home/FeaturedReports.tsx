@@ -69,10 +69,10 @@ const FeaturedReports = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <span className="text-sm font-semibold text-secondary uppercase tracking-wide">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wide">
               Popular Choices
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
               Featured Project Reports
             </h2>
             <p className="text-muted-foreground mt-2 max-w-xl">
@@ -119,14 +119,14 @@ const FeaturedReports = () => {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors line-clamp-2">
+                <h3 className="font-heading font-semibold text-foreground text-lg group-hover:text-primary transition-colors line-clamp-2">
                   {report.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1">
                   Project Value: {report.projectValue}
                 </p>
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                  <div className="flex items-center gap-1.5 text-secondary">
+                  <div className="flex items-center gap-1.5 text-primary">
                     <Coins className="h-4 w-4" />
                     <span className="text-sm font-semibold">{report.credits} Credit</span>
                   </div>

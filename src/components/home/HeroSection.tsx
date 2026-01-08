@@ -4,9 +4,9 @@ import { ArrowRight, FileText, Users, Video, CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
   const stats = [
-    { value: "1200+", label: "Project Reports" },
-    { value: "50+", label: "Industries" },
-    { value: "10K+", label: "Happy Entrepreneurs" },
+    { value: "1245+", label: "Industries" },
+    { value: "2500+", label: "Consultants" },
+    { value: "2244+", label: "Satisfied Customers" },
   ];
 
   const features = [
@@ -20,7 +20,7 @@ const HeroSection = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-foreground rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
@@ -28,13 +28,13 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-primary-foreground space-y-6 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm font-medium">India's Leading Business Report Platform</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Start Your Business With{" "}
-              <span className="text-secondary">Expert Guidance</span>
+              <span className="text-primary">Expert Guidance</span>
             </h1>
 
             <p className="text-lg text-primary-foreground/80 max-w-xl">
@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-secondary" />
+                  <CheckCircle className="h-5 w-5 text-primary" />
                   <span className="text-sm font-medium">{feature}</span>
                 </div>
               ))}
@@ -77,12 +77,12 @@ const HeroSection = () => {
                     <FileText className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground text-lg">Project Reports</h3>
+                    <h3 className="font-heading font-bold text-foreground text-lg">Project Reports</h3>
                     <p className="text-sm text-muted-foreground mt-1">
                       Detailed business plans with market analysis, financials, and implementation guides.
                     </p>
                     <div className="flex items-center gap-2 mt-3">
-                      <span className="px-2 py-1 text-xs font-medium rounded bg-secondary/10 text-secondary">
+                      <span className="px-2 py-1 text-xs font-medium rounded bg-primary/10 text-primary">
                         1 Credit/Report
                       </span>
                     </div>
@@ -91,20 +91,20 @@ const HeroSection = () => {
               </div>
 
               {/* Expert Talks Card */}
-              <div className="p-5 rounded-2xl bg-card shadow-lg" style={{ animationDelay: "0.2s" }}>
-                <div className="p-3 rounded-xl bg-info/10 w-fit mb-3">
-                  <Video className="h-6 w-6 text-info" />
+              <div className="p-5 rounded-2xl bg-card shadow-lg">
+                <div className="p-3 rounded-xl bg-secondary/10 w-fit mb-3">
+                  <Video className="h-6 w-6 text-secondary" />
                 </div>
-                <h4 className="font-semibold text-foreground">Expert Talks</h4>
+                <h4 className="font-heading font-semibold text-foreground">Expert Talks</h4>
                 <p className="text-xs text-muted-foreground mt-1">Industry insights from experts</p>
               </div>
 
               {/* Supplier Connect Card */}
-              <div className="p-5 rounded-2xl bg-card shadow-lg" style={{ animationDelay: "0.4s" }}>
+              <div className="p-5 rounded-2xl bg-card shadow-lg">
                 <div className="p-3 rounded-xl bg-success/10 w-fit mb-3">
                   <Users className="h-6 w-6 text-success" />
                 </div>
-                <h4 className="font-semibold text-foreground">Supplier Connect</h4>
+                <h4 className="font-heading font-semibold text-foreground">Supplier Connect</h4>
                 <p className="text-xs text-muted-foreground mt-1">Connect with verified suppliers</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground">
+                <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
                   {stat.value}
                 </div>
                 <div className="text-sm text-primary-foreground/70 mt-1">
