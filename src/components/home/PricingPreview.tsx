@@ -4,46 +4,46 @@ import { Check, Star, ArrowRight } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
+    name: "Executive",
     credits: 5,
-    price: "₹999",
-    perCredit: "₹200",
+    price: "₹5,900",
+    validity: "Per Annum",
     features: [
-      "5 Project Reports",
-      "Basic Expert Talks",
-      "Email Support",
-      "30 Days Validity",
+      "Daily Update For Industrial Solution",
+      "Project Report Download (Soft Copy)",
+      "Resume Builder",
+      "Live Support (Email/WhatsApp)",
+      "View Expert Details (10 Expert)",
     ],
     popular: false,
   },
   {
-    name: "Professional",
-    credits: 15,
-    price: "₹2,499",
-    perCredit: "₹167",
+    name: "Enterprise",
+    credits: 25,
+    price: "₹23,600",
+    validity: "Per Annum",
     features: [
-      "15 Project Reports",
-      "All Expert Talks",
-      "Course Access",
-      "Supplier Connect",
-      "Priority Support",
-      "90 Days Validity",
+      "All Associate Features",
+      "Access to Industrial Course Materials",
+      "Priority Live Support",
+      "Practically Verified Supplier Connect",
+      "Industrial Machinery/Equipment Connect",
+      "Tender Update",
     ],
     popular: true,
   },
   {
-    name: "Enterprise",
+    name: "Corporate",
     credits: 50,
-    price: "₹6,999",
-    perCredit: "₹140",
+    price: "₹59,000",
+    validity: "Per Annum",
     features: [
-      "50 Project Reports",
-      "Unlimited Expert Talks",
-      "All Courses & Workshops",
-      "Premium Supplier Connect",
-      "1-on-1 Coaching Session",
-      "Dedicated Support",
-      "1 Year Validity",
+      "All Enterprise Features",
+      "Industrial Documentaries Access",
+      "Industrial Research Access",
+      "Government Scheme Identification",
+      "Industrial Expert Q&A",
+      "All In One Combo Course Access",
     ],
     popular: false,
   },
@@ -55,15 +55,15 @@ const PricingPreview = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="text-sm font-semibold text-secondary uppercase tracking-wide">
-            Simple Pricing
+          <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+            Membership Plans
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mt-2">
-            Choose Your Credit Pack
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-2">
+            Membership at a Glance
           </h2>
           <p className="text-primary-foreground/80 mt-3 max-w-2xl mx-auto">
-            Pay only for what you need. Each credit gives you access to one 
-            project report and related content.
+            Choose the membership plan that fits your business needs. 
+            Get access to project reports, expert guidance, and more.
           </p>
         </div>
 
@@ -74,13 +74,13 @@ const PricingPreview = () => {
               key={index}
               className={`relative p-6 rounded-2xl ${
                 plan.popular 
-                  ? "bg-card shadow-xl scale-105 border-2 border-secondary" 
+                  ? "bg-card shadow-xl scale-105 border-2 border-primary" 
                   : "bg-card/90 shadow-lg"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">
+                  <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full bg-primary text-primary-foreground text-sm font-semibold">
                     <Star className="h-4 w-4" />
                     Most Popular
                   </span>
@@ -88,19 +88,19 @@ const PricingPreview = () => {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
+                <h3 className="font-heading text-xl font-bold text-foreground">{plan.name}</h3>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-primary">{plan.price}</span>
+                  <span className="text-4xl font-heading font-bold text-primary">{plan.price}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  {plan.credits} Credits • {plan.perCredit}/credit
+                  {plan.validity}
                 </p>
               </div>
 
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center">
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center mt-0.5">
                       <Check className="h-3 w-3 text-success" />
                     </div>
                     <span className="text-sm text-foreground">{feature}</span>
@@ -110,7 +110,7 @@ const PricingPreview = () => {
 
               <Button 
                 asChild 
-                variant={plan.popular ? "secondary" : "outline"} 
+                variant={plan.popular ? "default" : "outline"} 
                 className="w-full"
               >
                 <Link to="/pricing">Get Started</Link>
